@@ -2,6 +2,7 @@ from django.shortcuts import render
 from about.models import About, Testimonial
 from index.models import Person, Profile
 from resume.models import Education, Experience, MyCV, TechnicalSkill, NonTechnicalSkill
+from service.models import Service
 
 # Create your views here.
 def index(request):
@@ -21,6 +22,7 @@ def index(request):
     # Get the next 4 non-technical skills
     next_four_non_technical_skills = NonTechnicalSkill.objects.all()[5:10]
     mycv = MyCV.objects.all()
+    services = Service.objects.all()
     context = {
         'profile': profile,
         'person': person,
@@ -32,6 +34,7 @@ def index(request):
         'next_four_technical_skills': next_four_technical_skills,
         'first_four_non_technical_skills': first_four_non_technical_skills,
         'next_four_non_technical_skills': next_four_non_technical_skills,
-        'mycv': mycv
+        'mycv': mycv,
+        'services': services
     }
     return render(request, 'frontend/index.html', context)
