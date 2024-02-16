@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-3a9^)r2v25lxmmvb(5b$sz@b%c0pwh)rn=9p_rpo^uwifo%!9h"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['pankajportfolio.azurewebsites.net', 'www.pankajportfolio.azurewebsites.net','kushwahapankaj.me', 'www.kushwahapankaj.me']
 
