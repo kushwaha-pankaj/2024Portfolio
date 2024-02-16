@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from about.models import About, Testimonial
 from index.models import Person, Profile
+from portfolio.models import Portfolio
 from resume.models import Education, Experience, MyCV, TechnicalSkill, NonTechnicalSkill
 from service.models import Service
 
@@ -23,6 +24,7 @@ def index(request):
     next_four_non_technical_skills = NonTechnicalSkill.objects.all()[5:10]
     mycv = MyCV.objects.all()
     services = Service.objects.all()
+    portfolio = Portfolio.objects.all()
     context = {
         'profile': profile,
         'person': person,
@@ -35,6 +37,7 @@ def index(request):
         'first_four_non_technical_skills': first_four_non_technical_skills,
         'next_four_non_technical_skills': next_four_non_technical_skills,
         'mycv': mycv,
-        'services': services
+        'services': services,
+        'portfolio': portfolio
     }
     return render(request, 'frontend/index.html', context)
