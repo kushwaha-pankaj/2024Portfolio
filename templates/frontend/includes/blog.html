@@ -4,112 +4,43 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title">
-                    <h5>My Last Post</h5>
+                    <h5>My Blog</h5>
                 </div>
             </div>
         </div>
         <div class="row">
             <!--item-->
+            {% for post in blogs %}
+            {% if post.is_published %}
             <div class="col-lg-6 col-md-12">
                 <div class="item">
-                    <div class="image">
-                        <img src="{% static 'assets/img/blog/1.jpg' %}" alt="">
-                    </div>
+                    <a href="">
+                        <div class="image">
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                        </div>
+                    </a>
                     <div class="content">
                         <div class="date">
-                            <a href="blog-single.html">02
-                                <span class="mb-0 text-white">May</span>
+                            <a href="">{{ post.publish_date|date:"d" }}
+                                <span class="mb-0 text-white">{{ post.publish_date|date:"M" }}</span>
                             </a>
                         </div>
 
                         <h5 class="title mt-20 mb-20">
-                            <a href="blog-single.html" class="text-dark">Best Resources And Tuto To help you learn Graphic Design</a>
+                            <a href="" class="text-dark">{{ post.title }}</a>
                         </h5>
 
                         <ul class="tags list-inline">
-                            <li class="text-muted">#resources</li>
-                            <li class="text-muted">#graphic</li>
-                            <li class="text-muted">#tuto</li>
-                            <li class="text-muted">#design</li>
+                            {% for tag in post.tags.all|slice:":6" %}
+                            <li class="text-muted">#{{ tag.name }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
             </div>
-            <!--item-->
-            <div class="col-lg-6 col-md-12">
-                <div class="item">
-                    <div class="image">
-                        <img src="{% static 'assets/img/blog/2.jpg' %}" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="date">
-                            <a href="blog-single.html">02
-                                <span class="mb-0 text-white">May</span>
-                            </a>
-                        </div>
+            {% endif %}
+            {% endfor %}
 
-                        <h5 class="title mt-25 mb-20">
-                            <a href="blog-single.html" class="text-dark">How to create Your First UX Design Portfolio?</a>
-                        </h5>
-                        <ul class="tags list-inline">
-                            <li class="text-muted">#portfolio</li>
-                            <li class="text-muted">#UX</li>
-                            <li class="text-muted">#Design</li>
-                            <li class="text-muted">#website</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--item-->
-            <div class="col-lg-6 col-md-12">
-                <div class="item">
-                    <div class="image">
-                        <img src="{% static 'assets/img/blog/3.jpg' %}" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="date">
-                            <a href="blog-single.html">02
-                                <span class="mb-0 text-white">May</span>
-                            </a>
-                        </div>
-
-                        <h5 class="title mt-20 mb-20">
-                            <a href="blog-single.html" class="text-dark">Everything You Need to Know About Working From Home </a>
-                        </h5>
-                        <ul class="tags list-inline">
-                            <li class="text-muted">#working</li>
-                            <li class="text-muted">#remote</li>
-                            <li class="text-muted">#fromhome</li>
-                            <li class="text-muted">#info</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--item-->
-            <div class="col-lg-6 col-md-12">
-                <div class="item">
-                    <div class="image">
-                        <img src="{% static 'assets/img/blog/4.jpg' %}" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="date">
-                            <a href="blog-single.html">02
-                                <span class="mb-0 text-white">May</span>
-                            </a>
-                        </div>
-
-                        <h5 class="title mt-20 mb-20">
-                            <a href="blog-single.html" class="text-dark">How to Increase Your Productivity in the age of coronavirus</a>
-                        </h5>
-                        <ul class="tags list-inline">
-                            <li class="text-muted">#Productivity</li>
-                            <li class="text-muted">#Business</li>
-                            <li class="text-muted">#tools</li>
-                            <li class="text-muted">#corona</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="row mb-20">
             <div class="col-12">

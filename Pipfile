@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 pillow = "*"
 django-ckeditor-5 = "*"
+django-seed = "*"
+psycopg2 = "*"
+django-jazzmin = "*"
 
 [dev-packages]
 

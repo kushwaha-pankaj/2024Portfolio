@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from about.models import About, Testimonial
+from blog.models import BlogPost
 from index.models import Person, Profile
 from portfolio.models import Portfolio
 from resume.models import Education, Experience, MyCV, TechnicalSkill, NonTechnicalSkill
@@ -25,6 +26,7 @@ def index(request):
     mycv = MyCV.objects.all()
     services = Service.objects.all()
     portfolio = Portfolio.objects.all()
+    blogs = BlogPost.objects.filter(is_published=True).order_by('-publish_date')
     context = {
         'profile': profile,
         'person': person,
@@ -38,6 +40,7 @@ def index(request):
         'next_four_non_technical_skills': next_four_non_technical_skills,
         'mycv': mycv,
         'services': services,
-        'portfolio': portfolio
+        'portfolio': portfolio,
+        'blogs': blogs
     }
     return render(request, 'frontend/index.html', context)
