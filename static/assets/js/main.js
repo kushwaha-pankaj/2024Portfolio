@@ -57,12 +57,25 @@ Table of Content
     /* -----------------------------------
 	       magnificPopup
     -----------------------------------*/
-        $(".view-work").magnificPopup({
-            type: "image",
-            gallery: {
-                enabled: true
+    $(".view-work").magnificPopup({
+        type: "image",
+        gallery: {
+            enabled: true
+        },
+        callbacks: {
+            open: function() {
+                var magnificPopup = $.magnificPopup.instance;
+                // Disable next and previous buttons
+                magnificPopup.arrowLeft.hide();
+                magnificPopup.arrowRight.hide();
+                // Prevent advancing to the next image when clicking on the current image
+                $('.mfp-img').on('click.prevent', function(e) {
+                    e.stopPropagation(); // Stop the event from bubbling up
+                    return false; // Prevent the default behavior
+                });
             }
-        });
+        }
+    });
 
     /* -----------------------------------
 	       btn-custom
