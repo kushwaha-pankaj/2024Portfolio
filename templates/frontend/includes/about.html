@@ -1,0 +1,166 @@
+{% load static %}
+
+{% if about %}
+<div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+    <div class="about section">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h5>About Me</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-20">
+            <div class="col-lg-8">
+                <div class="bio">
+                    <h6 class="cd-headline clip text-dark mb-15">
+                        I Am a <span class="base-color">{{ about.i_am }}</span> based in {{ about.based_in }}
+                    </h6>
+                    <p>{{ about.description_one }}</p>
+                    <p>{{ about.description_two }}</p>
+                    <img src="{{ about.signature_image.url }}" alt="" class="mb-30 mt-5">
+                    <div class="d-flex align-items-center">
+                        <a href="mailto:kushwahapankaj1916@gmail.com" class="btn-custom">
+                            <span><i class="fas fa-phone"></i></span>
+                            <span>Contact Me</span>
+                        </a>
+                        <ul class="list-inline social-links ">
+                            <li><a href="https://www.instagram.com/nomadic.punky/" target="_blank" class="text-white"><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/kushwahapankaj/" target="_blank"
+                                    class="text-white"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/kushwaha-pankaj" target="_blank" class="text-white"><i
+                                        class="fab fa-github"></i></a></li>
+                            <li><a href="https://kushwahapankaj.medium.com/" target="_blank" class="text-white"><i
+                                        class="fab fa-medium"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="facts">
+                    <div class="fact-item">
+                        <div class="icon mb-0">
+                            <i class="fas fa-folder-plus base-color"></i>
+                        </div>
+                        <p class="text-dark mb-0">{{ about.projects_completed }} Project Completed</p>
+                    </div>
+
+                    <div class="fact-item">
+                        <div class="icon mb-0">
+                            <i class="fas fa-smile base-color"></i>
+                        </div>
+                        <p class="mb-0">{{ about.satisfied_clients }} Satisfied Clients</p>
+                    </div>
+
+                    <div class="fact-item">
+                        <div class="icon mb-0">
+                            <i class="fas fa-coffee base-color"></i>
+                        </div>
+                        <p class="mb-0">{{ about.cups_of_coffee }}+ Cup of coffee</p>
+                    </div>
+
+
+                    <div class="fact-item">
+                        <div class="icon mb-0">
+                            <i class="fas fa-medal base-color"></i>
+                        </div>
+                        <p class="mb-0">{{ about.total_certificate }} Certificates</p>
+                    </div>
+
+                    <div class="fact-item">
+                        <div class="icon mb-0">
+                            <i class="fas fa-certificate base-color"></i>
+                        </div>
+                        <p class="mb-0">{{ about.years_of_experience }} Years job experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Testimonials-->
+        <div class="row ">
+            <div class="col-md-12">
+                <div class="section-sub-title mb-10">
+                    <h6>Testimonials</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row testimonials mb-20">
+            <div class="col-lg-12">
+                <div class="owl-carousel">
+                    <!--item 1-->
+                    {% for testimonial in testomonials %}
+                    <div class="item">
+                        <div class="content">
+                            <div class="icon">
+                                <span class="icon_quotations"></span>
+                            </div>
+                            <p class="text-dark mb-15 mt-15">
+                                {{ testimonial.feedback }}
+                            </p>
+
+                            <p class="author text-dark mb-0">
+                                <span class="font-w-700">{{ testimonial.author_name }}</span>
+                                <span class="dot"></span> {{ testimonial.author_position }}
+                            </p>
+                        </div>
+                        
+                        {% if testimonial.author_image %}
+                        <div class="image">
+                            <img src="{{ testimonial.author_image.url }}" alt="">
+                        </div>
+                        {% else %}
+                        <div class="image">
+                            <img src="{% static 'assets/img/testimonials/avatar-2.png' %}" alt="">
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        <!--Clients-->
+        <!-- <div class="row ">
+            <div class="col-md-12">
+                <div class="section-sub-title mb-20">
+                    <h6>My Clients</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row clients">
+            <div class="col-lg-2 col-md-4 col-sm-4 col-4">
+                <div class="item">
+                    <img src="{% static 'assets/img/clients/1.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-4">
+                <div class="item">
+                    <img src="{% static 'assets/img/clients/2.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-4">
+                <div class="item">
+                    <img src="{% static 'assets/img/clients/3.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-4">
+                <div class="item">
+                    <img src="{% static 'assets/img/clients/4.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-4">
+                <div class="item">
+                    <img src="{% static 'assets/img/clients/5.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-4">
+                <div class="item">
+                    <img src="{% static 'assets/img/clients/6.png' %}" alt="">
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+{% endif %}

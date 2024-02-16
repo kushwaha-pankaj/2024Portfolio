@@ -1,0 +1,205 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- favicon -->
+    <link rel="icon" sizes="16x16" href="{% static 'assets/img/favicon.png' %}">
+
+    <!-- Title -->
+    <title> Pankaj Kushwaha - CV / Resume / Portfolio </title>
+
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/elegant-font-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/colors/color-1.css' %}">
+</head>
+
+<body data-spy="scroll" data-target="#scrollspy" data-offset="1">
+
+    <div class="page">
+        <!--background -->
+        <div class="bg">
+            <ul class="bg-circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="info-tab-area">
+            <div class="container">
+                <div class="info-tab-section">
+
+                    <!--header-->
+                    <div class="header d-flex align-items-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="profile d-flex align-items-center">
+                                        {% if profile %}
+                                        <div class="d-flex align-items-center">
+                                            <a href="{% url 'index' %}">
+                                                <img src="{{ profile.image.url }}" alt="">
+                                            </a>
+                                            <a class="desc" href="{% url 'index' %}">
+                                                <h3 class="text-white mb-0">{{ profile.name }}</h3>
+                                                <h6 class="text-white mb-0">{{ profile.designation }}</h6>
+                                            </a>
+                                        </div>
+                                        {% else %}
+                                        <div class="d-flex align-items-center">
+                                            <a href="{% url 'index' %}"><img src="{% static 'assets/img/profile.png' %}" alt="Pankaj Kushwaha"></a>
+                                            <a class="desc" href="{% url 'index' %}">
+                                                <h3 class="text-white mb-0">PANKAJ KUSHWAHA</h3>
+                                                <h6 class="text-white mb-0"> DATA SCIENCE & AI STUDENT </h6>
+                                            </a>
+                                        </div>
+                                        {% endif %}
+
+                                        <!--social-links-->
+                                        <div class="social-links ml-auto">
+                                            <p class="text-white mb-5">Follow Me On:</p>
+                                            <ul class="list-inline">
+                                                <li><a href="https://www.instagram.com/nomadic.punky/" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="https://www.linkedin.com/in/kushwahapankaj/" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="https://github.com/kushwaha-pankaj" target="_blank" class="text-white"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="https://kushwahapankaj.medium.com/" target="_blank" class="text-white"><i class="fab fa-medium"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!--btn-toggle-->
+                                        <div class="btn-toggler ml-auto" id="btnToggle">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--info-tab-->
+                    <div class="info-tab">
+
+                        <!--navigation-->
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                    <span> <i class="fas fa-home"></i></span>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">
+                                    <span><i class="fas fa-user-tie"></i></span>
+                                    <span> About</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="resume-tab" data-toggle="tab" href="#resume" role="tab" aria-controls="resume" aria-selected="false">
+                                    <span><i class="fas fa-graduation-cap"></i></span>
+                                    <span>Resume</span>
+                                </a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" id="services-tab" data-toggle="tab" href="#services" role="tab" aria-controls="services" aria-selected="false">
+                                    <span><i class="fas fa-cogs"></i></span>
+                                    <span>services</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="portfolio-tab" data-toggle="tab" href="#portfolio" role="tab" aria-controls="portfolio" aria-selected="false">
+                                    <span><i class="fas fa-briefcase"></i></span>
+                                    <span>Portfolio</span>
+                                </a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" id="blog-tab" data-toggle="tab" href="#blog" role="tab" aria-controls="blog" aria-selected="false">
+                                    <span><i class="fas fa-receipt"></i></span>
+                                    <span>Blog</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+                                    <span><i class="fas fa-envelope"></i></span>
+                                    <span>Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!--tab-content-->
+                        <div class="tab-content" id="myTabContent">
+
+                            <!--Home-->
+                            {% include "frontend/includes/home.html" %}
+
+                            <!--about-->
+                            {% include "frontend/includes/about.html" %}
+
+                            <!--Resume-->
+                            {% include "frontend/includes/resume.html" %}
+
+                            <!--Services-->
+                            {% include "frontend/includes/services.html" %}
+
+                            <!--Portfolio-->
+                            {% include "frontend/includes/portfolio.html" %}
+
+                            <!--blog-->
+                            {% include "frontend/includes/blog.html" %}
+
+                            <!--contact-->
+                            {% include "frontend/includes/contact.html" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!--loading -->
+    <div class="loading">
+        <div class="circle"></div>
+    </div>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'assets/js/jquery-3.5.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <!-- JS Plugins  -->
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/ajax-contact.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>
