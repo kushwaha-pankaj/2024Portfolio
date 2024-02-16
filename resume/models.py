@@ -55,3 +55,14 @@ class NonTechnicalSkill(models.Model):
 
     def __str__(self):
         return self.name
+
+class MyCV(models.Model):
+    name = models.CharField(max_length=100)
+    cv = models.FileField(upload_to='cv/')
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "My CV"
+        verbose_name_plural = "My CV"

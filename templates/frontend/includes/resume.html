@@ -71,7 +71,7 @@
             </div>
         </div>
         <!--skills-->
-        <div class="row ">
+        <div class="row">
             <div class="col-md-12">
                 <div class="section-sub-title mb-15">
                     <h6>My Technical Skills</h6>
@@ -82,32 +82,36 @@
         <div class="row mb-10">
             <div class="col-lg-6">
                 <div class="skills">
+                    {% for s in first_four_technical_skills  %}
                     <div class="skill-item">
-                        <p class="text-dark font-w-600 mb-5">Photoshop</p>
+                        <p class="text-dark font-w-600 mb-5">{{ s.name }}</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-                                <span>92%</span>
+                            <div class="skill-progress-bar" role="progressbar" aria-valuenow="{{s.progress}}" aria-valuemin="0" aria-valuemax="100">
+                                <span>{{s.progress}}%</span>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="skills">
+                    {% for s in next_four_technical_skills  %}
                     <div class="skill-item">
-                        <p class="text-dark font-w-600 mb-5">Javascript</p>
+                    <p class="text-dark font-w-600 mb-5">{{ s.name }}</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-                                <span>92%</span>
+                            <div class="skill-progress-bar" role="progressbar" aria-valuenow="{{s.progress}}" aria-valuemin="0" aria-valuemax="100">
+                                <span>{{s.progress}}%</span>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
 
         <!--skills-->
-        <div class="row">
+        <div class="row mt-10">
             <div class="col-md-12">
                 <div class="section-sub-title mb-15">
                     <h6>My Non-Technical Skills</h6>
@@ -118,38 +122,44 @@
         <div class="row mb-10">
             <div class="col-lg-6">
                 <div class="skills">
+                    {% for s in first_four_non_technical_skills  %}
                     <div class="skill-item">
-                        <p class="text-dark font-w-600 mb-5">Photoshop</p>
+                    <p class="text-dark font-w-600 mb-5">{{ s.name }}</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-                                <span>92%</span>
+                            <div class="skill-progress-bar" role="progressbar" aria-valuenow="{{s.progress}}" aria-valuemin="0" aria-valuemax="100">
+                                <span>{{s.progress}}%</span>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="skills">
+                    {% for s in next_four_non_technical_skills  %}
                     <div class="skill-item">
-                        <p class="text-dark font-w-600 mb-5">Javascript</p>
+                    <p class="text-dark font-w-600 mb-5">{{ s.name }}</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-                                <span>92%</span>
+                            <div class="skill-progress-bar" role="progressbar" aria-valuenow="{{s.progress}}" aria-valuemin="0" aria-valuemax="100">
+                                <span>{{s.progress}}%</span>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
         
         <div class="row mb-30">
             <div class="col-12">
-                <a href="#" class="btn-custom">
+                {% for cv in mycv %}
+                <a href="{{ cv.cv.url }}" class="btn-custom">
                     <span>
                         <i class="fas fa-cloud-download-alt"></i>
                     </span>
                     <span>Downland My CV</span>
                 </a>
+                {% endfor %}
             </div>
         </div>
     </div>

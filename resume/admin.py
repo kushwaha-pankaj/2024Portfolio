@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Education, Experience, TechnicalSkill, NonTechnicalSkill
+from .models import Education, Experience, TechnicalSkill, NonTechnicalSkill, MyCV
 
 class EducationAdmin(admin.ModelAdmin):
     list_display = ('course_name', 'university', 'duration')
@@ -22,3 +22,5 @@ class TechnicalSkillAdmin(admin.ModelAdmin):
 class NonTechnicalSkillAdmin(admin.ModelAdmin):
     list_display = ('name', 'progress')
     search_fields = ('name',)
+
+admin.site.register(MyCV)
