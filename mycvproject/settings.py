@@ -195,3 +195,6 @@ JAZZMIN_SETTINGS = {
         {"model": "auth.User"},
     ],
 }
+
+
+CSRF_TRUSTED_ORIGINS = ['https://kushwahapankaj.me', 'https://www.kushwahapankaj.me', 'https://pankajportfolio.azurewebsites.net', 'https://www.pankajportfolio.azurewebsites.net']
