@@ -14,8 +14,8 @@
                         <div class="content">
                             <h6 class="text-dark">{{ e.course_name }}</h6>
                             <p class="text-dark font-w-600 mb-10">{{ e.university }}</p>
-                            <small class="base-color">{{ e.duration}}</small>
-                            <p class="text-dark pt-10 mb-0">{{ e.description }}</p>
+                            <small class="base-color">{{ e.duration }}</small>
+                            <p class="text-dark pt-10 mb-0">{{ e.description|safe }}</p>
                         </div>
                     </div>
                     {% endfor %}
@@ -43,7 +43,7 @@
                                         <span>
                                             <i class="fas fa-link"></i>
                                         </span>
-                                        <span>www.example.com</span>
+                                        <span> {{e.link }} </span>
                                     </a>
                                 </div>
                             </div>

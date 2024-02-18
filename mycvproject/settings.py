@@ -196,5 +196,4 @@ JAZZMIN_SETTINGS = {
     ],
 }
 
-
 CSRF_TRUSTED_ORIGINS = ['https://kushwahapankaj.me', 'https://www.kushwahapankaj.me', 'https://pankajportfolio.azurewebsites.net', 'https://www.pankajportfolio.azurewebsites.net']
