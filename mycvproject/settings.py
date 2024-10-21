@@ -14,8 +14,8 @@ SECRET_KEY = "django-insecure-3a9^)r2v25lxmmvb(5b$sz@b%c0pwh)rn=9p_rpo^uwifo%!9h
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['kushwahapankaj.me', 'www.kushwahapankaj.me', 'pankajportfolio.azurewebsites.net', 'www.pankajportfolio.azurewebsites.net']
-ALLOWED_HOSTS = ['127.0.0.1:8000','127.0.0.1']
+ALLOWED_HOSTS = ['kushwahapankaj.com', 'www.kushwahapankaj.com',]
+# ALLOWED_HOSTS = ['127.0.0.1:8000','127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
@@ -197,4 +197,4 @@ JAZZMIN_SETTINGS = {
     ],
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://kushwahapankaj.me', 'https://www.kushwahapankaj.me', 'https://pankajportfolio.azurewebsites.net', 'https://www.pankajportfolio.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['https://kushwahapankaj.com', 'https://www.kushwahapankaj.com']
