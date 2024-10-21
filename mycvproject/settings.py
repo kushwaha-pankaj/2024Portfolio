@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'contact',
     # third party apps
     'django_ckeditor_5',
-    'django_seed',
+    # 'django_seed',
 ]
 
 MIDDLEWARE = [
