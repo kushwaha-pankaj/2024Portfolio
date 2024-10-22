@@ -24,6 +24,14 @@
                             <span><i class="fas fa-phone"></i></span>
                             <span>Contact Me</span>
                         </a>
+                        {% for cv in mycv %}
+                        <a href="{{ cv.cv.url }}" class="btn-custom ml-2">
+                            <span>
+                                <i class="fas fa-cloud-download-alt"></i>
+                            </span>
+                            <span>Download My CV</span>
+                        </a>
+                        {% endfor %}
                         <ul class="list-inline social-links ">
                             <li><a href="https://www.instagram.com/nomadic.punky/" target="_blank" class="text-white"><i
                                         class="fab fa-instagram"></i></a></li>

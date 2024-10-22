@@ -43,10 +43,10 @@
                         <p class="max-width-400 text-dark mb-15">{{ person.description }}</p>
 
                         <ul class="info list-inline mb-15">
-                            <li class="text-dark"><span class="font-w-700">Phone :</span> {{ person.phone }}</li>
+                            <!-- <li class="text-dark"><span class="font-w-700">Phone :</span> {{ person.phone }}</li> -->
                             <li class="text-dark"><span class="font-w-700">Email :</span><a href="mailto:{{ person.email }}" class="text-dark"> {{ person.email }}</a></li>
                             <li class="text-dark"><span class="font-w-700">Address :</span> {{ person.address }}</li>
-                            <li class="text-dark"><span class="font-w-700">Freelancer :</span> {% if person.freelancer %} Available {% else %} Not Available {% endif %}</li>
+                            <li class="text-dark"><span class="font-w-700">Freelancer :</span> {% if person.freelancer %} Available (£20/hr) {% else %} Not Available {% endif %}</li>
                         </ul>
 
                         <a href="#about" class="btn-custom" >
@@ -61,4 +61,4 @@
 </div>
 
 {% endif %}
-    
+
