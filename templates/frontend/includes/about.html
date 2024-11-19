@@ -25,7 +25,7 @@
                             <span>Contact Me</span>
                         </a>
                         {% for cv in mycv %}
-                        <a href="{{ cv.cv.url }}" class="btn-custom ml-2">
+                        <a href="{{ cv.cv.url }}" class="btn-custom ml-2" download="{{ cv.cv.url }}">
                             <span>
                                 <i class="fas fa-cloud-download-alt"></i>
                             </span>

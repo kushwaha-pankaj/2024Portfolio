@@ -2,7 +2,7 @@ from django.shortcuts import render
 from about.models import About, Testimonial
 from blog.models import BlogPost
 from index.models import Person, Profile
-from portfolio.models import Portfolio
+from portfolio.models import Category, Portfolio
 from resume.models import Education, Experience, MyCV, TechnicalSkill, NonTechnicalSkill
 from service.models import Service
 
@@ -26,6 +26,8 @@ def index(request):
     mycv = MyCV.objects.all()
     services = Service.objects.all()
     portfolio = Portfolio.objects.all()
+    category = Category.objects.all()
+    print(category)
     blogs = BlogPost.objects.filter(is_published=True).order_by('-publish_date')
     context = {
         'profile': profile,
@@ -41,6 +43,7 @@ def index(request):
         'mycv': mycv,
         'services': services,
         'portfolio': portfolio,
+        'category': category,
         'blogs': blogs
     }
     return render(request, 'frontend/index.html', context)
